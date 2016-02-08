@@ -57,6 +57,4 @@ that cannot be translated.
 * Support passing a promise that resolves to a collection as `options`. The component should be disabled
 until that promise resolves.
 
-* Fallback placeholder as a disabled option in the first position of the select.
-
 * Fallback multiple select too.

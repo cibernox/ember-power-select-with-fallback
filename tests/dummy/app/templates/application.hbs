@@ -18,3 +18,10 @@
 {{#power-select-with-fallback options=nestedNumbers mustFallback=mustFallback selected=otherNum onchange=(action (mut otherNum)) as |num|}}
   {{num}}
 {{/power-select-with-fallback}}
+
+
+<h3>Supports a placeholder</h3>
+
+{{#power-select-with-fallback options=numbers mustFallback=mustFallback selected=evenAnotherNum onchange=(action (mut evenAnotherNum)) placeholder="Please, choose one..." as |num|}}
+  {{num}}
+{{/power-select-with-fallback}}
