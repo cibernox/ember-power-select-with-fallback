@@ -20,7 +20,7 @@ translated to a regular select. **TODO: Not done :trollface: **
 
 ## Installation
 
-* `ember install ember-power-select-with-fallback` (not yet published in NPM)
+* `ember install ember-power-select-with-fallback`
 
 ## Usage
 
@@ -42,18 +42,36 @@ field should display when it fallback to the native component.
 {{/power-select-with-fallback}}
 ```
 
+If you by default you will see that non of the previous examples is displayed as a native select. Why?
+Because fallback to native is an opt-in behaviour.
+
+You can either pass `mustFallback=<true|false>` to customize this behaviour:
+
+```hbs
+{{#power-select-with-fallback mustFallback=true options=options selected=selected onchange=(action (mut selected)) as |opt|}}
+  {{opt}}
+{{/power-select-with-fallback}}
+```
+
+or, more likely, specify a fallback strategy, with `fallback-when=<fallback-strategy>`.
+There is 4 fallback strategies included in the component:
+
+* `ios`: Fallbacks only in ios devices.
+* `android`: Fallbacks only in android devices.
+* `windows-phone`: Fallbacks only in windows phones.
+* `mobile`: Fallbacks in any of the previous cases.
+
+```hbs
+{{#power-select-with-fallback fallback-when="mobile" options=options selected=selected onchange=(action (mut selected)) as |opt|}}
+  {{opt}}
+{{/power-select-with-fallback}}
+
 ## Known limitations
 
 * All the options must be available upfront. You cannot populate options using the `search` action.
 * Accepts nested groups up to 1 level deep.
 
 ## Upcoming features
-
-* Add a few built-in strategies for decide when to fallback in a declarative way. Idea:
-
-```hbs
-{{#power-select-with-fallback fallback-when="mobile|ios|android|screen-reader" ... as |opt|}}
-```
 
 * Implement some developer warnings that make very clear to the users that they're using some functionality
 that cannot be translated.
