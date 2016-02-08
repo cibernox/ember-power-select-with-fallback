@@ -27,7 +27,8 @@
         {{else}}
           <option value="{{index}}" selected={{if (eq opt selected) true}}>{{opt}}</option>
         {{/if}}
-power-
+      {{/each}}
+
     {{/if}}
   </select>
 {{else if (hasBlock "inverse")}}
