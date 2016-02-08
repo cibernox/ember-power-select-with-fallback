@@ -1,0 +1,1 @@
+export { default } from 'ember-power-select-with-fallback/components/power-select-with-fallback';

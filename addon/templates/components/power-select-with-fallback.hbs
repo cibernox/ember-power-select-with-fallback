@@ -1,0 +1,112 @@
+{{#if mustFallback}}
+  <select onchange={{action "handleChange"}}>
+    {{#if labelPath}}
+
+      {{#each options as |opt index|}}
+        {{#if opt.groupName}}
+          <optgroup label={{opt.groupName}}>
+            {{#each opt.options as |suboption subindex|}}
+              <option value="{{index}}.{{subindex}}">{{get suboption labelPath}}</option>
+            {{/each}}
+          </optgroup>
+        {{else}}
+          <option value="{{index}}" selected={{if (eq opt selected) true}}>{{get opt labelPath}}</option>
+        {{/if}}
+      {{/each}}
+
+    {{else}}
+
+      {{#each options as |opt index|}}
+        {{#if opt.groupName}}
+          <optgroup label={{opt.groupName}}>
+            {{#each opt.options as |suboption subindex|}}
+              <option value="{{index}}.{{subindex}}">{{suboption}}</option>
+            {{/each}}
+          </optgroup>
+        {{else}}
+          <option value="{{index}}" selected={{if (eq opt selected) true}}>{{opt}}</option>
+        {{/if}}
+      {{/each}}
+
+    {{/if}}
+  </select>
+{{else if (hasBlock "inverse")}}
+  {{#power-select
+      options=options
+      selected=selected
+      onchange=onchange
+      onkeydown=onkeydown
+      onfocus=onfocus
+      onopen=onopen
+      onclose=onclose
+      disabled=disabled
+      placeholder=placeholder
+      searchEnabled=searchEnabled
+      searchPlaceholder=searchPlaceholder
+      loadingMessage=loadingMessage
+      noMatchesMessage=noMatchesMessage
+      searchMessage=searchMessage
+      triggerComponent=triggerComponent
+      selectedItemComponent=selectedItemComponent
+      beforeOptionsComponent=beforeOptionsComponent
+      optionsComponent=optionsComponent
+      afterOptionsComponent=afterOptionsComponent
+      matcher=matcher
+      searchField=searchField
+      renderInPlace=renderInPlace
+      search=search
+      allowClear=allowClear
+      verticalPosition=verticalPosition
+      closeOnSelect=closeOnSelect
+      opened=opened
+      tabindex=tabindex
+      dir=dir
+      class=class
+      triggerClass=concatenatedTriggerClass
+      dropdownClass=dropdownClass
+      extra=extra
+      as |option term|}}
+      {{yield option term}}
+    {{else}}
+      {{yield to="inverse"}}
+  {{/power-select}}
+{{else}}
+  {{#power-select
+      options=options
+      selected=selected
+      onchange=onchange
+      onkeydown=onkeydown
+      onfocus=onfocus
+      onopen=onopen
+      onclose=onclose
+      disabled=disabled
+      placeholder=placeholder
+      searchEnabled=searchEnabled
+      searchPlaceholder=searchPlaceholder
+      loadingMessage=loadingMessage
+      noMatchesMessage=noMatchesMessage
+      searchMessage=searchMessage
+      triggerComponent=triggerComponent
+      selectedItemComponent=selectedItemComponent
+      beforeOptionsComponent=beforeOptionsComponent
+      optionsComponent=optionsComponent
+      afterOptionsComponent=afterOptionsComponent
+      matcher=matcher
+      searchField=searchField
+      renderInPlace=renderInPlace
+      search=search
+      allowClear=allowClear
+      verticalPosition=verticalPosition
+      closeOnSelect=closeOnSelect
+      opened=opened
+      tabindex=tabindex
+      dir=dir
+      class=class
+      triggerClass=concatenatedTriggerClass
+      dropdownClass=dropdownClass
+      extra=extra
+      as |option term|}}
+      {{yield option term}}
+  {{/power-select}}
+{{/if}}
+

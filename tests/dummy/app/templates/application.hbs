@@ -1,3 +1,20 @@
 <h2 id="title">Welcome to Ember</h2>
 
-{{outlet}}
+<button {{action "toggleFallback"}}>Toggle fallback</button>
+
+<h3>Options are strings</h3>
+{{#power-select-with-fallback options=numbers mustFallback=mustFallback selected=number onchange=(action (mut number)) as |num|}}
+  {{num}}
+{{/power-select-with-fallback}}
+
+<h3>Options are objects</h3>
+
+{{#power-select-with-fallback options=users mustFallback=mustFallback selected=user onchange=(action (mut user)) labelPath="name" as |user|}}
+  {{user.name}}
+{{/power-select-with-fallback}}
+
+<h3>Grouped options (does not support more than 1 level of nesting)</h3>
+
+{{#power-select-with-fallback options=nestedNumbers mustFallback=mustFallback selected=otherNum onchange=(action (mut otherNum)) as |num|}}
+  {{num}}
+{{/power-select-with-fallback}}
