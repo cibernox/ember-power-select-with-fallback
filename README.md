@@ -14,6 +14,10 @@ translated to a regular select. **TODO: Not done :trollface: **
 
 **Disclaimer:** This component is the fruit of 1h of work. I'm sure it can be greatly improved. PR welcomed.
 
+## DEMO
+
+[https://ember-power-select-with-fallback.pagefrontapp.com/](https://ember-power-select-with-fallback.pagefrontapp.com/)
+
 ## Installation
 
 * `ember install ember-power-select-with-fallback` (not yet published in NPM)
