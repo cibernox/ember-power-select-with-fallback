@@ -42,7 +42,7 @@ field should display when it fallback to the native component.
 {{/power-select-with-fallback}}
 ```
 
-## Know limitations
+## Known limitations
 
 * All the options must be available upfront. You cannot populate options using the `search` action.
 * Accepts nested groups up to 1 level deep.
