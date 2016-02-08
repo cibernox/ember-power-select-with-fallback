@@ -25,3 +25,10 @@
 {{#power-select-with-fallback options=numbers mustFallback=mustFallback selected=evenAnotherNum onchange=(action (mut evenAnotherNum)) placeholder="Please, choose one..." as |num|}}
   {{num}}
 {{/power-select-with-fallback}}
+
+<h3>Fallback automatically in mobile (ignores the button)</h3>
+<p>Visit this page in mobile and you will see a native select, visit it in desktop you will see the power-select component</p>
+
+{{#power-select-with-fallback options=users fallback-when='mobile' selected=otherUser onchange=(action (mut otherUser)) labelPath="name" as |user|}}
+  {{user.name}}
+{{/power-select-with-fallback}}
