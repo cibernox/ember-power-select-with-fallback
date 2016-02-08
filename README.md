@@ -42,3 +42,21 @@ field should display when it fallback to the native component.
 
 * All the options must be available upfront. You cannot populate options using the `search` action.
 * Accepts nested groups up to 1 level deep.
+
+## Upcoming features
+
+* Add a few built-in strategies for decide when to fallback in a declarative way. Idea:
+
+```hbs
+{{#power-select-with-fallback fallback-when="mobile|ios|android|screen-reader" ... as |opt|}}
+```
+
+* Implement some developer warnings that make very clear to the users that they're using some functionality
+that cannot be translated.
+
+* Support passing a promise that resolves to a collection as `options`. The component should be disabled
+until that promise resolves.
+
+* Fallback placeholder as a disabled option in the first position of the select.
+
+* Fallback multiple select too.
