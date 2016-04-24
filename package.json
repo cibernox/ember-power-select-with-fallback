@@ -1,6 +1,6 @@
 {
   "name": "ember-power-select-with-fallback",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
     "doc": "doc",
@@ -37,7 +37,7 @@
     "ember-get-helper": "1.0.4",
     "ember-load-initializers": "^0.5.0",
     "ember-pagefront": "0.10.10",
-    "ember-power-select": "0.9.0-beta.2",
+    "ember-power-select": "0.10.1",
     "ember-resolver": "^2.0.3",
     "ember-try": "~0.0.8",
     "loader.js": "^4.0.0"

@@ -22,7 +22,7 @@ export default Ember.Component.extend({
       case 'android':
         return isAndroid();
       case 'windows-phone':
-        return isAndroid();
+        return isWindowsPhone();
       case undefined:
         return false;
       case null:
