@@ -65,6 +65,7 @@ There is 4 fallback strategies included in the component:
 {{#power-select-with-fallback fallback-when="mobile" options=options selected=selected onchange=(action (mut selected)) as |opt|}}
   {{opt}}
 {{/power-select-with-fallback}}
+```
 
 ## Known limitations
 
