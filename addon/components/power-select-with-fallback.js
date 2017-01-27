@@ -11,8 +11,6 @@ export default Ember.Component.extend({
   layout,
   tagName: '',
 
-  matchTriggerWidth: true,
-
 
   // CPs
   mustFallback: computed('fallback-when', function() {
